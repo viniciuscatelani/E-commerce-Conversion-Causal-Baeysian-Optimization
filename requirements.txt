@@ -1,0 +1,9 @@
+pandas
+numpy
+plotly
+dash
+scipy
+pymc
+arviz
+jupyter
+das
