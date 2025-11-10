@@ -1,9 +1,6 @@
-pandas
-numpy
-plotly
-dash
-scipy
-pymc
-arviz
-jupyter
-das
+pandas>=2.0.0
+numpy>=1.26.0
+pymc>=5.0.0
+arviz>=0.16.0
+plotly>=5.10.0
+ipykernel # For running in Jupyter

@@ -1,0 +1,19 @@
+# Usa uma imagem base Python com foco em Data Science (slim para ser leve)
+FROM python:3.11-slim
+
+# Define o diretório de trabalho dentro do container
+WORKDIR /usr/src/app
+
+# Copia o arquivo de dependências e as instala
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Cria a estrutura de pastas esperada pelo projeto
+RUN mkdir -p data/raw data/processed src
+
+# Copia o resto do código para o container
+COPY . .
+
+# Comando de entrada: Inicia o Jupyter Lab no container
+# Permite acesso externo pela porta 8888
+CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
