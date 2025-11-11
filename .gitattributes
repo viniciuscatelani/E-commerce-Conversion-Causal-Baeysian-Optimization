@@ -1,12 +1,19 @@
-# Deletes binary files and caches
-*.nc binary
+# Ignorar arquivos de dados
 *.csv linguist-vendored
+*.json linguist-vendored
+*.parquet linguist-vendored
+*.nc linguist-vendored
 
-# deletes vendor code
-deployment/ linguist-generated
+# Ignorar ambientes e builds
 ecommerce_env/ linguist-generated
+deployment/ linguist-generated
+__pycache__/ linguist-generated
+*.egg-info/ linguist-generated
 
-
-# specifies that the notebooks are on Python
-*.ipynb linguist-language=Jupyter Notebook
+# Forçar reconhecimento correto
 *.py linguist-language=Python
+*.ipynb linguist-language=Python
+
+# Ignorar arquivos JS e HTML incorporados (ex: saídas Plotly)
+*.js linguist-vendored
+*.html linguist-vendored
