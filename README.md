@@ -50,12 +50,12 @@ This justified the use of a **Bayesian Zero-Inflated Model (Beta-Binomial for CV
 
 The visualization below is the **Posterior Distribution of the ARPU Lift** (Variant - Control).
 
-![Posterior Distribution of ARPU Lift - The primary decision chart showing 99.61% below the Decision Point (Lift = 0).](image_854639.png)
+![Posterior Distribution of ARPU Lift - The primary decision chart showing 99.61% below the Decision Point (Lift = 0).](images/decision_point.png)
 
 * The vast majority of the probability density lies to the left of the **Decision Point (Lift = 0)**, quantifying the risk of error at less than $0.39\%$.
 
 The confidence intervals below confirm the separation between the groups:
-![94% Credibility Intervals for ARPU and CVR](image_84d123.png)
+![94% Credibility Intervals for ARPU and CVR](images/credibility_intervals.png)
 
 * The 94% Credibility Intervals for `arpu_control` and `arpu_variant` do **not overlap**, confirming the conclusiveness of the business metric.
 
