@@ -1,15 +1,19 @@
-# Ignore large files
+# Ignorar arquivos de dados
 *.csv linguist-vendored
 *.json linguist-vendored
-*.nc linguist-vendored
 *.parquet linguist-vendored
+*.nc linguist-vendored
 
-# Ignores environments and build files
+# Ignorar ambientes e builds
 ecommerce_env/ linguist-generated
 deployment/ linguist-generated
 __pycache__/ linguist-generated
 *.egg-info/ linguist-generated
 
-*.ipynb linguist-language=Python
+# Forçar reconhecimento correto
 *.py linguist-language=Python
+*.ipynb linguist-language=Python
+
+# Ignorar arquivos JS e HTML incorporados (ex: saídas Plotly)
 *.js linguist-vendored
+*.html linguist-vendored
