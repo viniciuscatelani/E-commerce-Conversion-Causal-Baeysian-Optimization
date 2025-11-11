@@ -4,9 +4,8 @@
 *.bin binary
 
 # deletes vendor code
-vendor/ linguist-vendored
-deployment/ linguist-vendored
-ecommerce_env/ linguist-vendored
+deployment/ linguist-generated
+ecommerce_env/ linguist-generated
 
 
 # specifies that the notebooks are on Python
