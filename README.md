@@ -15,15 +15,24 @@ This project implements a rigorous framework for A/B testing analysis, moving be
 
 ## I. 🎯 Executive Summary (Management Report)
 
-| Metric         | Control           | Variant | Raw Lift (Loss)  | P(Control > Variant) | Recommendation |
-| :------------- | :---------------- | :------ | :--------------- | :------------------- | :------------- |
-| **ARPU** | $0.1969 | $0.0749 | -61.96% | **99.61%** | 🛑**REJECT**   |                |
+| Metric         | Control           | Variant | Raw Lift (Loss) | P(Control > Variant) | Recommendation |
+| :------------- | :---------------- | :------ | :-------------- | :------------------- | :------------- |
+| **ARPU** | $0.1969 | $0.0749 | -61.96% | 99.61%          | 🛑**REJECT**   |                |
 
 ### Final Conclusion: The Variant Must Be Rejected
 
 The Bayesian analysis provides a definitive conclusion with a **99.61% certainty** that the Control version of the product generates more revenue per user than the proposed Variant.
 
 The change introduced in the Variant has been proven to **cause a significant loss in business value**. The Variant must be rejected immediately to prevent revenue destruction.
+
+### Future System Recommendations
+
+Beyond the immediate decision to reject the Variant, a critical architectural process issue was identified during data cleaning: **1,541 users (15.4% of the original sample)** were simultaneously exposed to both the Control and Variant versions.
+
+This **data contamination** compromises the core assumption of Causal Inference (SUTVA). To mitigate future errors, we strongly recommend the Engineering and Analytics teams:
+
+* **Review the User Assignment Logic:** The system responsible for assigning a `USER_ID` to a `VARIANT_NAME` must be audited to ensure that assignment is sticky (persists across sessions) and exclusive upon the first exposure.
+* **Implement Server-Side Exclusion:** Introduce a mechanism (e.g., in the Experimentation Platform or database) that prevents a user's ID from being logged for a second, different variant once they have been exposed to the first.
 
 ---
 
