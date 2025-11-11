@@ -6,6 +6,8 @@
 # deletes vendor code
 vendor/ linguist-vendored
 deployment/ linguist-vendored
+ecommerce_env/ linguist-vendored
+
 
 # specifies that the notebooks are on Python
 *.ipynb linguist-language=Jupyter Notebook
