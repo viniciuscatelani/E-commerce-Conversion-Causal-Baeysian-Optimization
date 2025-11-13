@@ -13,9 +13,9 @@ This project implements a rigorous framework for A/B testing analysis, moving be
 ---
 ### 🚀 Key Results: Decision at a Glance
 
-* **Final Decision Confidence:** $\mathbf{99.61\%}$ certainty that the **Control** group is superior.
+* **Final Decision Confidence:** $\mathbf{99.61%}$ certainty that the **Control** group is superior.
 * **Recommendation:** **IMMEDIATE REJECTION** of the Variant.
-* **Business Impact Avoided:** Preventing a $\mathbf{-62\%}$ loss in Average Revenue Per User (ARPU).
+* **Business Impact Avoided:** Preventing a $\mathbf{-62%}$ loss in Average Revenue Per User (ARPU).
 * **Causal Integrity:** Identified and removed $\mathbf{1,541}$ contaminated users to validate the experiment.
 ---
 
