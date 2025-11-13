@@ -5,11 +5,19 @@
 This project implements a rigorous framework for A/B testing analysis, moving beyond traditional Frequentist methods (like t-tests) to provide decision-makers with quantified uncertainty. We used a real-world e-commerce dataset to evaluate a product change intended to increase **Average Revenue Per User (ARPU)**.
 
 ### Key Focus Areas:
-
 * **Causal Inference:** Validation of randomization and cleaning of data contamination (SUTVA assumption).
 * **Advanced Statistics:** Implementation of a **Zero-Inflated Gamma Model** using **PyMC** to correctly handle the highly-skewed revenue distribution and low conversion rates.
 * **Architecture & MLOps:** Containerization using **Docker** for guaranteed reproducibility.
 * **Business Communication:** Reporting the final result via **Probability of Control being Better (PBB)**, providing a clear, actionable metric for the business.
+
+---
+### 🚀 Key Results: Decision at a Glance
+
+* **Final Decision Confidence:** $\mathbf{99.61\%}$ certainty that the **Control** group is superior.
+* **Recommendation:** **IMMEDIATE REJECTION** of the Variant.
+* **Business Impact Avoided:** Preventing a $\mathbf{-62\%}$ loss in Average Revenue Per User (ARPU).
+* **Causal Integrity:** Identified and removed $\mathbf{1,541}$ contaminated users to validate the experiment.
+---
 
 ---
 
