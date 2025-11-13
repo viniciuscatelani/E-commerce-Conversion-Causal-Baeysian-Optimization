@@ -17,7 +17,6 @@ This project implements a rigorous framework for A/B testing analysis, moving be
 * **Recommendation:** **IMMEDIATE REJECTION** of the Variant.
 * **Business Impact Avoided:** Preventing a **-62%** loss in Average Revenue Per User (ARPU).
 * **Causal Integrity:** Identified and removed $\mathbf{1,541}$ contaminated users to validate the experiment.
----
 
 ---
 
@@ -41,6 +40,11 @@ This **data contamination** compromises the core assumption of Causal Inference 
 
 * **Review the User Assignment Logic:** The system responsible for assigning a `USER_ID` to a `VARIANT_NAME` must be audited to ensure that assignment is sticky (persists across sessions) and exclusive upon the first exposure.
 * **Implement Server-Side Exclusion:** Introduce a mechanism (e.g., in the Experimentation Platform or database) that prevents a user's ID from being logged for a second, different variant once they have been exposed to the first.
+
+---
+### Data Source
+
+This analysis uses the public A/B testing dataset sourced from **Kaggle** [[link to Kaggle dataset](https://www.kaggle.com/datasets/sergylog/ab-test-data)]. The data forms the foundation of our Causal Inference exercise.
 
 ---
 
