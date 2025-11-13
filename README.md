@@ -44,7 +44,7 @@ This **data contamination** compromises the core assumption of Causal Inference 
 ---
 ### Data Source
 
-This analysis uses the public A/B testing dataset sourced from **Kaggle** [[link to Kaggle dataset](https://www.kaggle.com/datasets/sergylog/ab-test-data)]. The data forms the foundation of our Causal Inference exercise.
+This analysis uses the public A/B testing dataset sourced from **Kaggle** [[A/B test data](https://www.kaggle.com/datasets/sergylog/ab-test-data)]. The data forms the foundation of our Causal Inference exercise.
 
 ---
 
