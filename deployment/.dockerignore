@@ -1,0 +1,20 @@
+# Ignore environment files and directories
+ecommerce_env/
+venv/
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Ignore IDEs and control versioning
+.git
+.gitignore
+.vscode
+.idea
+*.log
+
+# Ignore temporary files and binary files that are not code
+*.swp
+*.pyc
+
+# Ignore o the inference cache file if it created before the build
+data/processed/bayesian_trace.nc
