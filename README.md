@@ -5,12 +5,14 @@
 This project implements a rigorous framework for A/B testing analysis, moving beyond traditional Frequentist methods (like t-tests) to provide decision-makers with quantified uncertainty. We used a real-world e-commerce dataset to evaluate a product change intended to increase **Average Revenue Per User (ARPU)**.
 
 ### Key Focus Areas:
+
 * **Causal Inference:** Validation of randomization and cleaning of data contamination (SUTVA assumption).
 * **Advanced Statistics:** Implementation of a **Zero-Inflated Gamma Model** using **PyMC** to correctly handle the highly-skewed revenue distribution and low conversion rates.
 * **Architecture & MLOps:** Containerization using **Docker** for guaranteed reproducibility.
 * **Business Communication:** Reporting the final result via **Probability of Control being Better (PBB)**, providing a clear, actionable metric for the business.
 
 ---
+
 ### 🚀 Key Results: Decision at a Glance
 
 * **Final Decision Confidence:** **99.61%** certainty that the **Control** group is superior.
@@ -42,6 +44,7 @@ This **data contamination** compromises the core assumption of Causal Inference 
 * **Implement Server-Side Exclusion:** Introduce a mechanism (e.g., in the Experimentation Platform or database) that prevents a user's ID from being logged for a second, different variant once they have been exposed to the first.
 
 ---
+
 ### Data Source
 
 This analysis uses the public A/B testing dataset sourced from **Kaggle** [[A/B test data](https://www.kaggle.com/datasets/sergylog/ab-test-data)]. The data forms the foundation of our Causal Inference exercise.
@@ -93,6 +96,22 @@ To ensure the project environment is perfectly reproducible, the project utilize
 The pre-built image is available on Docker Hub, making reproduction instantaneous.
 
 * **Image Name:** `viniciuscatelani/ecom-ab-test-bayesian`
+
+### Docker & Security Hygiene
+
+To adhere to best practices in DevOps and minimize the attack surface of the image, the following measures were implemented:
+
+1. **.dockerignore:** A `.dockerignore` file is used to exclude unnecessary and potentially sensitive files (such as local virtual environments, `.git` history, and IDE configuration files) from the Docker build context. This ensures a **faster build time** and a **minimalist, cleaner image**.
+2. **Image Minimization:** The final image contains only the necessary libraries and the code required for execution, following the principle of **least privilege** for container components.
+
+### ⚠️ Note on Code Visibility (Production vs. Portfolio)
+
+For maximum transparency and ease of review, the Python source code is included in the final image.
+
+In a **real-world production environment**, this practice would be strictly avoided. Instead, we would:
+
+* Use multi-stage builds to compile the final application into a minimal image.
+* Exclude all source files and environment variables not essential for the service's execution (e.g., only include a pre-compiled model file and the API runner script).
 
 ### Reproduction Steps (Using Pre-built Image)
 
