@@ -5,11 +5,18 @@
 This project implements a rigorous framework for A/B testing analysis, moving beyond traditional Frequentist methods (like t-tests) to provide decision-makers with quantified uncertainty. We used a real-world e-commerce dataset to evaluate a product change intended to increase **Average Revenue Per User (ARPU)**.
 
 ### Key Focus Areas:
-
 * **Causal Inference:** Validation of randomization and cleaning of data contamination (SUTVA assumption).
 * **Advanced Statistics:** Implementation of a **Zero-Inflated Gamma Model** using **PyMC** to correctly handle the highly-skewed revenue distribution and low conversion rates.
 * **Architecture & MLOps:** Containerization using **Docker** for guaranteed reproducibility.
 * **Business Communication:** Reporting the final result via **Probability of Control being Better (PBB)**, providing a clear, actionable metric for the business.
+
+---
+### 🚀 Key Results: Decision at a Glance
+
+* **Final Decision Confidence:** **99.61%** certainty that the **Control** group is superior.
+* **Recommendation:** **IMMEDIATE REJECTION** of the Variant.
+* **Business Impact Avoided:** Preventing a **-62%** loss in Average Revenue Per User (ARPU).
+* **Causal Integrity:** Identified and removed $\mathbf{1,541}$ contaminated users to validate the experiment.
 
 ---
 
@@ -33,6 +40,11 @@ This **data contamination** compromises the core assumption of Causal Inference 
 
 * **Review the User Assignment Logic:** The system responsible for assigning a `USER_ID` to a `VARIANT_NAME` must be audited to ensure that assignment is sticky (persists across sessions) and exclusive upon the first exposure.
 * **Implement Server-Side Exclusion:** Introduce a mechanism (e.g., in the Experimentation Platform or database) that prevents a user's ID from being logged for a second, different variant once they have been exposed to the first.
+
+---
+### Data Source
+
+This analysis uses the public A/B testing dataset sourced from **Kaggle** [[A/B test data](https://www.kaggle.com/datasets/sergylog/ab-test-data)]. The data forms the foundation of our Causal Inference exercise.
 
 ---
 
